@@ -1,0 +1,341 @@
+/* src/pages/BookingHistory.css */
+.history-container {
+  max-width: 1200px;
+  margin: 80px auto 40px;
+  padding: 20px;
+  min-height: calc(100vh - 120px);
+}
+
+.history-container h2 {
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 28px;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.bookings-table-container {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bookings-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.bookings-table thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.bookings-table th {
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.bookings-table td {
+  padding: 15px;
+  border-bottom: 1px solid #ecf0f1;
+  transition: background-color 0.3s;
+}
+
+.bookings-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.event-name-cell strong {
+  color: #2c3e50;
+  font-size: 16px;
+}
+
+.ticket-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #f0f0f0;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.cost-amount {
+  font-weight: 700;
+  color: #27ae60;
+  font-size: 16px;
+}
+
+.date-cell {
+  color: #7f8c8d;
+  font-size: 14px;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.booking-summary {
+  background: #f8f9fa;
+  padding: 20px;
+  border-top: 2px solid #e0e0e0;
+}
+
+.booking-summary h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.summary-stats {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.stat-label {
+  color: #7f8c8d;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.stat-value {
+  color: #2c3e50;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* Loading State */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-container p {
+  margin-top: 20px;
+  color: white;
+  font-size: 18px;
+}
+
+/* Error Message */
+.error-message {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border-left: 4px solid #e74c3c;
+}
+
+/* Empty State */
+.no-bookings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px;
+}
+
+.empty-icon {
+  font-size: 80px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.empty-state h3 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.empty-state p {
+  color: #7f8c8d;
+  margin-bottom: 20px;
+}
+
+.empty-state button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.3s;
+}
+
+.empty-state button:hover {
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .history-container {
+    padding: 15px;
+    margin-top: 70px;
+  }
+
+  .history-container h2 {
+    font-size: 24px;
+  }
+
+  .bookings-table th,
+  .bookings-table td {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .ticket-badge {
+    padding: 3px 8px;
+    font-size: 12px;
+  }
+
+  .cost-amount {
+    font-size: 14px;
+  }
+
+  .date-cell {
+    font-size: 12px;
+  }
+
+  .status-badge {
+    padding: 3px 8px;
+    font-size: 10px;
+  }
+
+  .summary-stats {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .stat-value {
+    font-size: 20px;
+  }
+
+  /* Make table scrollable on mobile */
+  .bookings-table-container {
+    overflow-x: auto;
+  }
+
+  .bookings-table {
+    min-width: 600px;
+  }
+}
+
+/* Print Styles - Fixed version without print-color-adjust */
+@media print {
+  /* Hide navbar when printing */
+  .student-navbar,
+  .admin-navbar,
+  .empty-state button,
+  .export-btn {
+    display: none;
+  }
+  
+  /* Remove margins and padding for print */
+  .history-container {
+    margin: 0;
+    padding: 10px;
+  }
+  
+  /* Remove shadows for print */
+  .bookings-table-container {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+  
+  /* Ensure table looks good in print */
+  .bookings-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .bookings-table th,
+  .bookings-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .bookings-table thead {
+    background: #f0f0f0 !important;
+    color: black !important;
+  }
+  
+  /* Ensure status badge colors print */
+  .status-badge {
+    border: 1px solid #ccc;
+    background-color: #f0f0f0 !important;
+    color: black !important;
+    -webkit-print-color-adjust: force;
+    print-color-adjust: force;
+  }
+  
+  /* Ensure cost colors print */
+  .cost-amount {
+    color: black !important;
+  }
+  
+  /* Page break control */
+  .booking-summary {
+    page-break-inside: avoid;
+  }
+}
+
+/* Alternative solution for print colors using standard property */
+@media print and (forced-colors: active) {
+  .status-badge {
+    border: 1px solid;
+  }
+}

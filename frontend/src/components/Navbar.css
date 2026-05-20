@@ -1,0 +1,241 @@
+/* src/components/Navbar.css - Update logo section */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Student Navbar */
+.student-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* Admin Navbar */
+.admin-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 70px;
+}
+
+/* Left section - Logo */
+.nav-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+/* SQUARE LOGO - No circle, square shape */
+.nav-logo-img {
+  height: 45px;
+  width: auto;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.3s;
+  border-radius: 8px;  /* Square with slight rounded corners */
+}
+
+.nav-logo-img:hover {
+  transform: scale(1.05);
+}
+
+.nav-logo-text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+
+.nav-logo-text:hover {
+  transform: scale(1.02);
+}
+
+.student-navbar .nav-logo-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.admin-navbar .nav-logo-text {
+  color: white;
+}
+
+.logo-icon {
+  font-size: 28px;
+}
+
+/* Center section - Navigation Menu */
+.nav-center {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 8px 20px;
+  border-radius: 8px;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+
+.student-navbar .nav-menu button {
+  color: #333;
+}
+
+.student-navbar .nav-menu button:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+.admin-navbar .nav-menu button {
+  color: white;
+}
+
+.admin-navbar .nav-menu button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.nav-menu button.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white !important;
+}
+
+.admin-navbar .nav-menu button.active {
+  background: #3498db;
+}
+
+/* Right section - Logout Button */
+.nav-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.logout-btn {
+  background: none !important;
+  color: #e74c3c !important;
+  padding: 8px 25px !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  transition: all 0.3s !important;
+  border: 1px solid #e74c3c !important;
+}
+
+.logout-btn:hover {
+  background: #e74c3c !important;
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+}
+
+/* For admin navbar, logout button */
+.admin-navbar .logout-btn {
+  color: #ff6b6b !important;
+  border-color: #ff6b6b !important;
+}
+
+.admin-navbar .logout-btn:hover {
+  background: #ff6b6b !important;
+  color: white !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 968px) {
+  .nav-container {
+    padding: 0 15px;
+    height: 60px;
+  }
+
+  .nav-logo-img {
+    height: 35px;
+  }
+
+  .nav-logo-text {
+    font-size: 16px;
+  }
+
+  .logo-icon {
+    font-size: 22px;
+  }
+
+  .nav-menu {
+    gap: 5px;
+  }
+
+  .nav-menu button {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .logout-btn {
+    padding: 6px 15px !important;
+    font-size: 13px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-logo-text span:last-child {
+    display: none;
+  }
+
+  .nav-menu button span {
+    display: none;
+  }
+
+  .nav-menu button {
+    padding: 6px 10px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 0 10px;
+  }
+
+  .nav-menu {
+    gap: 3px;
+  }
+
+  .nav-menu button {
+    padding: 6px 8px;
+  }
+
+  .logout-btn {
+    padding: 6px 12px !important;
+  }
+}

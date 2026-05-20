@@ -1,0 +1,73 @@
+/* src/pages/StudentHome.css */
+.home-container {
+  padding: 80px 20px 20px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.event-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+}
+
+.event-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.event-details {
+  padding: 20px;
+}
+
+.event-details h3 {
+  margin: 0 0 10px 0;
+  color: #333;
+}
+
+.department {
+  color: #667eea;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.location, .date, .price, .tickets {
+  margin: 8px 0;
+  color: #666;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+button.sold-out {
+  background: #ccc;
+  cursor: not-allowed;
+}

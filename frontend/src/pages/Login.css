@@ -1,0 +1,591 @@
+/* src/pages/Login.css - Rectangular Logo & Better Alignment */
+
+/* FORCE RECTANGULAR LOGO SHAPE */
+.college-logo-large {
+  width: 350px !important;
+  height: 150px !important;
+  border-radius: 8px !important;
+  background: white !important;
+  padding: 5px !important;
+  object-fit: contain !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
+  transition: transform 0.3s ease !important;
+}
+
+.college-logo-large:hover {
+  transform: scale(1.05) !important;
+}
+
+.mobile-logo {
+  width: 80px !important;
+  height: 55px !important;
+  border-radius: 8px !important;
+  object-fit: contain !important;
+}
+
+.logo-placeholder {
+  width: 120px !important;
+  height: 80px !important;
+  border-radius: 8px !important;
+  background: #f0f0f0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 40px !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.login-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.login-panel {
+  display: flex;
+  background: white;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  min-height: 600px;
+}
+
+/* Left Side - College Info */
+.login-info {
+  flex: 1;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 50px;
+  color: white;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-info::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.info-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.college-badge {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.login-info h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  font-weight: 700;
+  text-align: center;
+}
+
+.login-info p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  opacity: 0.95;
+  text-align: center;
+}
+
+.info-features {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 6px 12px;
+  border-radius: 50px;
+  font-size: 12px;
+}
+
+.feature-icon {
+  font-size: 16px;
+}
+
+/* Right Side - Login Form */
+.login-form-container {
+  flex: 1;
+  padding: 50px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-header h2 {
+  font-size: 28px;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.form-header p {
+  color: #7f8c8d;
+  font-size: 14px;
+}
+
+/* User Type Selector */
+.user-type-selector {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  background: #f5f6fa;
+  padding: 5px;
+  border-radius: 60px;
+}
+
+.type-btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 60px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #555;
+}
+
+.type-btn .btn-icon {
+  font-size: 20px;
+}
+
+.type-btn.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.type-btn:not(.active):hover {
+  background: #e8e8e8;
+  color: #333;
+}
+
+/* Register Toggle */
+.register-toggle {
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.toggle-label input {
+  display: none;
+}
+
+.toggle-slider {
+  width: 40px;
+  height: 20px;
+  background: #ddd;
+  border-radius: 20px;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.toggle-slider::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: all 0.3s;
+}
+
+.toggle-label input:checked + .toggle-slider {
+  background: #667eea;
+}
+
+.toggle-label input:checked + .toggle-slider::before {
+  transform: translateX(20px);
+}
+
+.toggle-text {
+  color: #555;
+  font-size: 14px;
+}
+
+/* Input Groups - Better Alignment */
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #2c3e50;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.input-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 15px;
+  font-size: 18px;
+  color: #999;
+  z-index: 1;
+}
+
+.input-icon-wrapper input {
+  width: 100%;
+  padding: 14px 45px 14px 45px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 15px;
+  transition: all 0.3s;
+  font-family: inherit;
+  background: white;
+  color: #333;
+  outline: none;
+}
+
+.input-icon-wrapper input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.input-icon-wrapper input::placeholder {
+  color: #bbb;
+  font-size: 14px;
+}
+
+.input-icon-wrapper input:disabled {
+  background: #f5f5f5;
+  cursor: not-allowed;
+}
+
+/* Password Toggle Button */
+.password-toggle {
+  position: absolute;
+  right: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s;
+  z-index: 1;
+  color: #999;
+}
+
+.password-toggle:hover {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.password-toggle:focus {
+  outline: none;
+}
+
+/* Login Button */
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+.login-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error Alert */
+.error-alert {
+  background: #fee2e2;
+  color: #dc2626;
+  padding: 12px 15px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.alert-icon {
+  font-size: 18px;
+}
+
+/* Register Prompt */
+.register-prompt {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e0e0e0;
+  font-size: 14px;
+  color: #555;
+}
+
+.register-prompt button {
+  background: none;
+  border: none;
+  color: #667eea;
+  cursor: pointer;
+  font-weight: 600;
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+.register-prompt button:hover {
+  text-decoration: underline;
+}
+
+/* Demo Credentials */
+.demo-credentials {
+  text-align: center;
+  margin-top: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.demo-credentials p {
+  font-size: 12px;
+  color: #7f8c8d;
+  margin-bottom: 8px;
+}
+
+.demo-credentials code {
+  background: #e0e0e0;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #2c3e50;
+  font-family: monospace;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .login-panel {
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .login-info {
+    display: none;
+  }
+
+  .login-form-container {
+    padding: 40px;
+  }
+
+  .mobile-logo {
+    display: block;
+    margin: 0 auto 20px;
+  }
+
+  .form-header h2 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-form-container {
+    padding: 30px 20px;
+  }
+
+  .user-type-selector {
+    gap: 10px;
+  }
+
+  .type-btn {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .type-btn .btn-icon {
+    font-size: 16px;
+  }
+
+  .input-icon-wrapper input {
+    padding: 12px 40px 12px 40px;
+    font-size: 14px;
+    min-height: 44px;
+  }
+
+  .input-icon {
+    font-size: 16px;
+    left: 12px;
+  }
+
+  .password-toggle {
+    right: 12px;
+    min-height: 44px;
+  }
+
+  .form-header h2 {
+    font-size: 22px;
+  }
+
+  .login-btn {
+    padding: 12px;
+    font-size: 14px;
+    min-height: 44px;
+  }
+
+  .type-btn {
+    min-height: 44px;
+  }
+}
+
+/* Laptop/Desktop specific adjustments */
+@media (min-width: 969px) {
+  .login-form-container {
+    padding: 60px 50px;
+  }
+  
+  .input-group {
+    margin-bottom: 25px;
+  }
+  
+  .login-btn {
+    margin-top: 20px;
+  }
+}
+
+/* Focus visible for accessibility */
+input:focus-visible {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+button:focus-visible {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+/* Ensure password field shows dots */
+input[type="password"] {
+  font-family: monospace;
+  letter-spacing: 1px;
+}
+
+/* Smooth transitions */
+.input-icon-wrapper input,
+.password-toggle,
+.login-btn,
+.type-btn {
+  transition: all 0.3s ease;
+}

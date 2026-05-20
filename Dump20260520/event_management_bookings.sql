@@ -1,0 +1,68 @@
+-- MySQL dump 10.13  Distrib 8.0.45, for macos15 (arm64)
+--
+-- Host: localhost    Database: event_management
+-- ------------------------------------------------------
+-- Server version	9.6.0
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+SET @MYSQLDUMP_TEMP_LOG_BIN = @@SESSION.SQL_LOG_BIN;
+SET @@SESSION.SQL_LOG_BIN= 0;
+
+--
+-- GTID state at the beginning of the backup 
+--
+
+SET @@GLOBAL.GTID_PURGED=/*!80000 '+'*/ '12c71580-ff6c-11f0-ac09-45b1a732047f:1-7852';
+
+--
+-- Table structure for table `bookings`
+--
+
+DROP TABLE IF EXISTS `bookings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `bookings` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `student_email` varchar(255) NOT NULL,
+  `event_id` bigint NOT NULL,
+  `number_of_tickets` int NOT NULL,
+  `total_cost` double DEFAULT NULL,
+  `booking_date` datetime(6) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `phone_number` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `event_id` (`event_id`),
+  CONSTRAINT `bookings_ibfk_1` FOREIGN KEY (`event_id`) REFERENCES `events` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `bookings`
+--
+
+LOCK TABLES `bookings` WRITE;
+/*!40000 ALTER TABLE `bookings` DISABLE KEYS */;
+INSERT INTO `bookings` VALUES (1,'student@college.com',1,2,1000,'2026-05-02 10:29:08.562900','CONFIRMED','9876543210'),(2,'mad@gmail.com',1,3,1500,'2026-05-02 11:16:12.902011','CONFIRMED','8639648981'),(3,'mad@gmail.com',4,1,200,'2026-05-02 11:30:05.836138','CONFIRMED','8639648981'),(4,'mad@gmail.com',2,10,2000,'2026-05-02 12:18:54.486450','CONFIRMED','8639648981'),(5,'madhulasya@gmail.com',3,1,500,'2026-05-02 16:17:21.512510','CONFIRMED','8639648981'),(6,'ashu@gmail.com',3,1,500,'2026-05-04 15:04:14.161591','CONFIRMED','9963221689'),(7,'madhulasya509@gmail.com',4,1,200,'2026-05-04 15:06:06.320699','CONFIRMED','8639648981'),(8,'madhulasya509@gmail.com',3,1,500,'2026-05-04 15:08:12.582258','CONFIRMED','8639648981'),(9,'madhulasya509@gmail.com',1,1,500,'2026-05-04 15:10:53.990623','CONFIRMED','8639648981'),(10,'madhulasya509@gmail.com',4,2,400,'2026-05-04 15:24:02.756238','CONFIRMED','8639648981'),(11,'vtu25448@gmail.com',1,2,1000,'2026-05-04 15:27:56.159701','CONFIRMED','8639648981'),(12,'vtu25251@gmail.com',1,7,3500,'2026-05-06 04:25:29.297134','CONFIRMED','8639648981'),(13,'madhulasya509@gmail.com',2,12,2400,'2026-05-06 04:26:50.463842','CANCELLED','8639648981'),(14,'satyakarthik16@gmail.com',1,1,500,'2026-05-06 04:35:03.494325','CANCELLED','8978225700'),(15,'satyakarthik16@gmail.com',4,1,200,'2026-05-06 05:03:20.249275','CONFIRMED','8978225700'),(16,'satyakarthik16@gamil.com',1,1,500,'2026-05-06 05:57:37.384674','CONFIRMED','8978225700'),(17,'vtu2525@veltech.edu.in',2,1,200,'2026-05-06 05:59:08.086183','CONFIRMED','8978225700');
+/*!40000 ALTER TABLE `bookings` ENABLE KEYS */;
+UNLOCK TABLES;
+SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2026-05-20 16:21:09
